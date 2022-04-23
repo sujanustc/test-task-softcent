@@ -4,4 +4,4 @@ const port = 8000
 
 app.use("/", require("./routes"))
 
-app.listen(port, () => console.log(`Server is running at http://localhost:${port}`));
+module.exports = app.listen(port, () => console.log(`Server is running at http://localhost:${port}`));

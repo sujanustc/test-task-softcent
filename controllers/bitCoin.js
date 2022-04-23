@@ -28,8 +28,9 @@ module.exports.getInfo = async (req, res) => {
 
         //Return Response
         return res.json({
+            status: true,
             "Current Coin Rate": res1.data.bpi[currency.toUpperCase()].rate_float,
-            "Mininum Rate in Last 30 Days": {
+            "Minimum Rate in Last 30 Days": {
                 date: min[0],
                 rate: min[1]
             },
@@ -40,7 +41,6 @@ module.exports.getInfo = async (req, res) => {
             disclaimer: "BPI value data returned as " + currency.toUpperCase(),
         });
     } catch (err) {
-        console.log(err);
         return res.status(404).json({
             status: false,
             error: "Hit endpoint with a valid Currency Code."
